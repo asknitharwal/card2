@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div id="main_container" ></div>
+</body>
+<script>
+
+let data =[
+    {
+    image:"./image/11.jpg" ,
+    title : "Flamingo"
+    },
+    {
+        image:"./image/12.jpg",
+          title : "Kingfishers"
+    },
+    {
+      image:"./image/13.jpeg",
+      title : "Parrot"
+    },
+    {
+      image:"./image/14.jpeg",
+      title : "Canaries"
+    },
+    {
+        image:"./image/15.webp",
+      title : "American Robin"
+    },
+    {
+      image:"./image/16.webp",
+      title : "Sparrows"
+    },
+    {
+      image:"./image/17.jpg",
+      title : "Hawk"
+    },
+    {
+      image:"./image/18.webp",
+      title : "Warblers"
+    }
+]
+
+    let main_container = document.getElementById("main_container")
+function getData(){
+    data.map((user)=>{
+        let card= document.createElement("card_div")
+        card.classList.add("card")
+        let img = document.createElement("img")
+        img.src = user.image
+        console.log(img.src);
+        let title= document.createElement("h1")
+        title.innerText = user.title
+        let details = document.createElement("p")
+        details.innerText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quod."
+        let btn = document.createElement("btn")
+        btn.innerText = "Read More"
+        card.append(img,title,details,btn);
+        main_container.append(card)
+    });
+}
+getData();
+
+
+</script>
+</html>
